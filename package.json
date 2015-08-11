@@ -1,0 +1,28 @@
+{
+  "name": "shared-worker-loader",
+  "version": "0.1.0",
+  "description": "Shared Worker loader for Webpack",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mrtnbroder/shared-worker-loader.git"
+  },
+  "keywords": [
+    "webpack",
+    "loader",
+    "shared",
+    "worker"
+  ],
+  "author": "Martin Broder <hello@martinbroder.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrtnbroder/shared-worker-loader/issues"
+  },
+  "homepage": "https://github.com/mrtnbroder/shared-worker-loader#readme",
+  "peerDependencies": {
+		"webpack": ">=0.9 <2"
+	},
+  "dependencies": {
+    "loader-utils": "^0.2.11"
+  }
+}
