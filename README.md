@@ -7,11 +7,11 @@ Shared Worker loader for Webpack.
 [Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
 
 ``` javascript
-var MySharedWorker = require('shared-worker!./file.js')
+var sharedWorker = require('shared-worker!./file.js')
 
-var worker = new MySharedWorker()
-worker.addEventListener('message', (e) => {...})
+var worker = new sharedWorker()
 worker.port.onmessage = (e) => {...}
+worker.port.postMessage({foo: 'bar'})
 worker.port.start()
 ```
 
