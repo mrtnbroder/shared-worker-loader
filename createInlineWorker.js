@@ -1,7 +1,7 @@
 // http://stackoverflow.com/questions/10343913/how-to-create-a-web-worker-from-a-string
 
 var URL = window.URL || window.webkitURL;
-module.exports = function(content, url) {
+module.exports = function(content, url, name) {
 	try {
 		try {
 			var blob;
@@ -13,11 +13,11 @@ module.exports = function(content, url) {
 			} catch(e) { // The proposed API
 				blob = new Blob([content]);
 			}
-			return new SharedWorker(URL.createObjectURL(blob));
+			return new SharedWorker(URL.createObjectURL(blob), name);
 		} catch(e) {
-			return new SharedWorker('data:application/javascript,' + encodeURIComponent(content));
+			return new SharedWorker('data:application/javascript,' + encodeURIComponent(content), name);
 		}
 	} catch(e) {
-		return new SharedWorker(url);
+		return new SharedWorker(url, name);
 	}
 }
