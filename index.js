@@ -5,10 +5,12 @@ var path = require('path');
 var loaderUtils = require('loader-utils');
 module.exports = function() {};
 module.exports.pitch = function(request) {
+
   if (!this.webpack)
     throw new Error('Only usable with webpack');
   var callback = this.async();
-  var query = loaderUtils.parseQuery(this.query);
+  var query = loaderUtils.getOptions(this) || {};
+
   var outputOptions = {
     filename: '[hash].sharedworker.js',
     chunkFilename: '[id].[hash].sharedworker.js',
